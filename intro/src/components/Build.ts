@@ -91,7 +91,7 @@ pnpm add @tachui/navigation@0.7.0-alpha2
 pnpm add @tachui/symbols@0.7.0-alpha2
 
 # Mobile patterns (alerts, action sheets)
-pnpm add @tachui/mobile-patterns@0.7.0-alpha2
+pnpm add @tachui/mobile@0.7.0-alpha2
 `,
                 { element: "pre" },
               ),

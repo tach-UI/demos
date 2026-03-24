@@ -40,7 +40,7 @@ export function Modular(): ComponentInstance {
       ['Tree-shaking friendly - ', 'Only bundled icons are included, automatic optimization for production builds'],
       ['Perfect for: ', 'Icon-heavy applications, design systems']
     ] },
-    { name: '@tachui/mobile-patterns (Mobile UI Enhancements)', size: '~10KB', entries: [
+    { name: '@tachui/mobile (Mobile UI Enhancements)', size: '~10KB', entries: [
       ['2 Key Mobile Components - ', 'ActionSheet, Alert'],
       ['Native iOS feel - ', 'Pixel-perfect ActionSheet and Alert components that match iOS design guidelines'],
       ['Touch-first design - ', 'Optimized tap targets, gesture recognition, and haptic feedback integration'],
@@ -49,7 +49,7 @@ export function Modular(): ComponentInstance {
       ['Zero configuration - ', 'Works immediately with sensible defaults, extensive customization available'],
       ['Perfect for: ', 'Mobile applications, touch interfaces']
     ] },
-    { name: '@tachui/advanced-forms (Extended Form Elements)', size: '~20KB', entries: [
+    { name: '@tachui/forms (Extended Form Elements)', size: '~20KB', entries: [
       ['3 Additional Form Components - ', 'DatePicker (calendar, time picker, and date range selector), Slider, Stepper'],
       ['Rich DatePicker - ', 'Calendar, time picker, and date range selection with localization support'],
       ['Advanced sliders - ', 'Multi-thumb sliders, range selection, custom marks, and smooth animations'],
