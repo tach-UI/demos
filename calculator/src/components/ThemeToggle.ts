@@ -5,7 +5,8 @@
  * Demonstrates theme switching and reactive state management
  */
 
-import { Button, ComponentInstance, createSignal, Assets, setTheme, getCurrentTheme } from '@tachui/core/minimal'
+import { type ComponentInstance, createSignal, Assets, setTheme, getCurrentTheme } from '@tachui/core/minimal'
+import { Button } from '@tachui/primitives'
 import { updateGradientColors } from '../assets/calculator-assets'
 import { useThemeReactivity } from '../hooks/useTheme'
 
@@ -39,7 +40,6 @@ export function ThemeToggle(): ComponentInstance {
   // Use ColorAssets directly - now that reactive system is fixed
 
   return Button(() => isDarkMode() ? '𖤓' : '⏾', toggleTheme)
-            .modifier
             .backgroundColor(Assets.logoText)
             .foregroundColor(Assets.numberButtonForeground)
             .cornerRadius(18)
@@ -49,7 +49,6 @@ export function ThemeToggle(): ComponentInstance {
             .frame({ width: 36, height: 36 })
             .fontWeight('500')
             .margin({ right: 16})
-            .build()
 }
 
 // Export the current theme state for other components

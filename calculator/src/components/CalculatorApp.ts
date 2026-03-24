@@ -7,7 +7,8 @@
  * - Clean component architecture
  */
 
-import { VStack, HStack, Text, Image, Spacer, createSignal, ComponentInstance, Assets, infinity, EnvironmentObject } from '@tachui/core/minimal'
+import { createSignal, type ComponentInstance, Assets, infinity, EnvironmentObject } from '@tachui/core/minimal'
+import { VStack, HStack, Text, Image, Spacer } from '@tachui/primitives'
 import { CalculatorDisplay } from './CalculatorDisplay'
 import { CalculatorKeypad } from './CalculatorKeypad'
 import { calculatorReducer, initialState, type CalculatorState, type CalculatorButton } from '../logic/calculator-logic'
@@ -70,12 +71,9 @@ export function CalculatorApp(): ComponentInstance {
         children: [
           // App Logo
           Image(Assets.tachuiLogo)
-            .modifier
-            .size({ height: 64 })
-            .build(),
+            .frame({ height: 64 }),
 
           Text("tachulator")
-            .modifier
             .font({
               family: Assets.calculatorLogoFont,
               size: 36,
@@ -85,18 +83,15 @@ export function CalculatorApp(): ComponentInstance {
             .lineHeight(1)
             .textCase('uppercase')
             .textAlign('left')
-            .padding(0)
-            .build(),
+            .padding(0),
 
           Spacer(),
 
           ThemeToggle()
         ]
       })
-        .modifier
         .padding({ vertical: 8 })
-        .frame({ maxWidth: infinity })
-        .build(),
+        .frame({ maxWidth: infinity }),
 
       // Calculator Display
       CalculatorDisplay({
@@ -112,7 +107,6 @@ export function CalculatorApp(): ComponentInstance {
       })
     ]
   })
-    .modifier
     .backgroundColor(Assets.calculatorBackground)
     .cornerRadius(24)
     .padding(0)
@@ -125,7 +119,6 @@ export function CalculatorApp(): ComponentInstance {
     .shadow({ x: 0, y: 20, radius: 40, color: Assets.calculatorShadow })
     .border(1, Assets.calculatorBorder)
     .clipped()
-    .build()
 
   return result
 }

@@ -5,7 +5,8 @@
  * Demonstrates layout systems and button interactions
  */
 
-import { VStack, HStack, Button, ComponentInstance, Assets, createSignal, createComputed } from '@tachui/core/minimal'
+import { type ComponentInstance, Assets, createSignal, createComputed } from '@tachui/core/minimal'
+import { VStack, HStack, Button } from '@tachui/primitives'
 import { type CalculatorButton as CalculatorButtonType, type Operation } from '../logic/calculator-logic'
 // Import font assets
 import '../assets/calculator-fonts'
@@ -123,7 +124,6 @@ export function CalculatorKeypad({ onButtonPress, currentOperation }: Calculator
     })()
 
     return Button(value, handlePress)
-      .modifier
       .frame({ width: buttonWidth, height: buttonHeight })
       .background(Assets.buttonGradientOverlay)
       .backgroundColor(bgColor)
@@ -143,7 +143,6 @@ export function CalculatorKeypad({ onButtonPress, currentOperation }: Calculator
       .onHover((hovered: boolean) => {
         setIsHovered(hovered)
       })
-      .build()
   }
 
   return VStack({

@@ -5,7 +5,9 @@
  * Now includes integrated calculator tape above the main display
  */
 
-import { VStack, Text, Show, ComponentInstance, Assets, infinity, withComponentContext } from '@tachui/core/minimal'
+import { type ComponentInstance, Assets, infinity, withComponentContext } from '@tachui/core/minimal'
+import { VStack, Text } from '@tachui/primitives'
+import { Show } from '@tachui/flow-control'
 
 import { CalculatorTape } from './CalculatorTape'
 import type { TapeEntry } from '../types/calculator-tape'
@@ -56,7 +58,6 @@ function _CalculatorDisplay({
         const currentValue = typeof value === 'function' ? value() : value
         return formatDisplayValue(currentValue)
       })
-        .modifier
         .font({
           family: Assets.calculatorBaseFont,
           size: 48,
@@ -66,16 +67,13 @@ function _CalculatorDisplay({
         .textAlign('right')
         .letterSpacing('-0.5px')
         .padding(20)
-        .build()
     ]
   })
-    .modifier
     .backgroundColor(Assets.displayBackground)
     .cornerRadius(0)
     .padding(8)
     .frame({ maxWidth: infinity, minHeight: 80 })
     .width('100%')
-    .build()
 }
 
 // Export the wrapped version with component context

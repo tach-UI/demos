@@ -4,7 +4,8 @@
  * Renders a single tape entry with proper styling and opacity fade
  */
 
-import { VStack, Text, ComponentInstance, Assets } from '@tachui/core/minimal'
+import { type ComponentInstance, Assets } from '@tachui/core/minimal'
+import { VStack, Text } from '@tachui/primitives'
 import type { TapeEntry } from '../types/calculator-tape'
 import { calculateEntryOpacity } from '../utils/tape-utils'
 
@@ -27,7 +28,6 @@ export function CalculatorTapeEntry({
     debugLabel: `Tape Entry ${entry.historyIndex}`,
     children: [
       Text(entry.operation)
-        .modifier
         .font({
           family: Assets.calculatorMonospaceFont,
           size: 14,
@@ -37,12 +37,9 @@ export function CalculatorTapeEntry({
         .textAlign('right')
         .opacity(opacity)
         .letterSpacing('-0.25px')
-        .build()
     ]
   })
-    .modifier
     .frame({ width: '100%' })
     .paddingHorizontal(8)
     .paddingVertical(2)
-    .build()
 }

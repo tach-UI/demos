@@ -3,7 +3,15 @@ import { resolve } from 'path'
 
 export default defineConfig({
   resolve: {
-    // No aliases needed - use npm packages directly
+    // Keep linked workspace packages resolved through local node_modules.
+    preserveSymlinks: true,
+    alias: [
+      // Force a single registry singleton across linked package symlink paths.
+      {
+        find: '@tachui/registry',
+        replacement: resolve(__dirname, '../../packages/registry/src/index.ts')
+      }
+    ]
   },
   define: {
     // Define globals for browser compatibility
@@ -57,7 +65,15 @@ export default defineConfig({
     host: '0.0.0.0'
   },
   optimizeDeps: {
-    include: ['@tachui/core'],
-    exclude: []
+    // Linked local tachUI packages contain ESM/CJS interop that esbuild prebundle
+    // can mis-resolve in dev mode. Let Vite load them directly instead.
+    include: [],
+    exclude: [
+      '@tachui/core',
+      '@tachui/data',
+      '@tachui/modifiers',
+      '@tachui/primitives',
+      '@tachui/flow-control'
+    ]
   }
 })

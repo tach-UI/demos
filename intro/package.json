@@ -1,6 +1,6 @@
 {
   "name": "@tachui/intro-app",
-  "version": "0.1.0",
+  "version": "0.8.8-alpha",
   "description": "tachUI Introduction - Marketing landing page recreated with tachUI framework",
   "type": "module",
   "scripts": {
@@ -14,8 +14,8 @@
     "clean": "rm -rf dist node_modules/.vite*"
   },
   "dependencies": {
-    "@tachui/core": "^0.7.0-alpha1",
-    "@tachui/symbols": "^0.7.0-alpha1"
+    "@tachui/core": "link:../../packages/core",
+    "@tachui/symbols": "link:../../packages/symbols"
   },
   "devDependencies": {
     "@types/node": "^20.19.10",

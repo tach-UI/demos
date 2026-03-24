@@ -30,8 +30,20 @@ importers:
   calculator:
     dependencies:
       '@tachui/core':
-        specifier: ^0.7.0-alpha1
-        version: 0.7.0-alpha1(typescript@5.9.2)
+        specifier: link:../../packages/core
+        version: link:../../packages/core
+      '@tachui/data':
+        specifier: link:../../packages/data
+        version: link:../../packages/data
+      '@tachui/flow-control':
+        specifier: link:../../packages/flow-control
+        version: link:../../packages/flow-control
+      '@tachui/modifiers':
+        specifier: link:../../packages/modifiers
+        version: link:../../packages/modifiers
+      '@tachui/primitives':
+        specifier: link:../../packages/primitives
+        version: link:../../packages/primitives
     devDependencies:
       '@types/node':
         specifier: ^20.19.10
@@ -52,11 +64,11 @@ importers:
   intro:
     dependencies:
       '@tachui/core':
-        specifier: ^0.7.0-alpha1
-        version: 0.7.0-alpha1(typescript@5.9.2)
+        specifier: link:../../packages/core
+        version: link:../../packages/core
       '@tachui/symbols':
-        specifier: ^0.7.0-alpha1
-        version: 0.7.0-alpha1(@tachui/core@0.7.0-alpha1(typescript@5.9.2))
+        specifier: link:../../packages/symbols
+        version: link:../../packages/symbols
     devDependencies:
       '@types/node':
         specifier: ^20.19.10
@@ -378,19 +390,6 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@tachui/core@0.7.0-alpha1':
-    resolution: {integrity: sha512-Ld08+F5JuFRe9A3x44lo+9wUPQ5WjT4yiEl9WlVdOvQPNFc5ijXy4evw9yilvQQXPbs7Gn4WbzMLa/4Gu9qTgw==}
-    peerDependencies:
-      typescript: '>=5.0.0'
-    peerDependenciesMeta:
-      typescript:
-        optional: true
-
-  '@tachui/symbols@0.7.0-alpha1':
-    resolution: {integrity: sha512-9qKU4zDj5EVkHFRBD8XEq69WFhx0bLQ5S3WzIsO1eJ4QZxvWHryZUyY4M+qJuKeKPJJ/CdJdOrt0Ia7929Bfrg==}
-    peerDependencies:
-      '@tachui/core': ^0.1.0
-
   '@types/chai@5.2.2':
     resolution: {integrity: sha512-8kB30R7Hwqf40JPiKhVzodJs2Qc1ZJ5zuT3uzw5Hq/dhNCl3G3l83jfpdI1e20BP348+fV7VIL/+FxaXkqBmWg==}
 
@@ -650,9 +649,6 @@ packages:
 
   loupe@3.2.1:
     resolution: {integrity: sha512-CdzqowRJCeLU72bHvWqwRBBlLcMEtIvGrlvef74kMnV2AolS9Y8xUv1I0U/MNAWMhBlKIoyuEgoJ0t/bbwHbLQ==}
-
-  lucide@0.447.0:
-    resolution: {integrity: sha512-FDF5jUaT3WjGE8OUDRLoNJ9RiG9EpQZaYk454B4AJtDbzuI1Ss3wg4LyB7kp5oW9wg7X2HmMgsiwOJUw9HCQnA==}
 
   magic-string@0.30.18:
     resolution: {integrity: sha512-yi8swmWbO17qHhwIBNeeZxTceJMeBvWJaId6dyvTSOwTipqeHhMhOrz6513r1sOKnpvQ7zkhlG8tPrpilwTxHQ==}
@@ -1162,15 +1158,6 @@ snapshots:
   '@rollup/rollup-win32-x64-msvc@4.49.0':
     optional: true
 
-  '@tachui/core@0.7.0-alpha1(typescript@5.9.2)':
-    optionalDependencies:
-      typescript: 5.9.2
-
-  '@tachui/symbols@0.7.0-alpha1(@tachui/core@0.7.0-alpha1(typescript@5.9.2))':
-    dependencies:
-      '@tachui/core': 0.7.0-alpha1(typescript@5.9.2)
-      lucide: 0.447.0
-
   '@types/chai@5.2.2':
     dependencies:
       '@types/deep-eql': 4.0.2
@@ -1437,8 +1424,6 @@ snapshots:
       wrap-ansi: 9.0.0
 
   loupe@3.2.1: {}
-
-  lucide@0.447.0: {}
 
   magic-string@0.30.18:
     dependencies:

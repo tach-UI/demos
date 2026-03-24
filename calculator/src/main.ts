@@ -9,7 +9,9 @@
  * - Core-only bundle (~60KB target)
  */
 
-import { enableDebug, debugManager, provideEnvironmentObject, getCurrentComponentContext, createComponentContext, setCurrentComponentContext, setTheme, detectSystemTheme, mountRoot } from '@tachui/core/minimal'
+import { provideEnvironmentObject, getCurrentComponentContext, createComponentContext, setCurrentComponentContext, setTheme, detectSystemTheme, mountRoot } from '@tachui/core/minimal'
+import '@tachui/modifiers/preload/basic'
+import '@tachui/modifiers/preload/effects'
 // import { initializeResponsiveSystem } from '@tachui/core' // REMOVED: Causing 3.9MB bundle bloat
 
 import { CalculatorApp } from './components/CalculatorApp'
@@ -30,7 +32,7 @@ document.documentElement.classList.add(`${initialTheme}-theme`)
 createCalculatorAssets()
 
 // Setup Debug Mode
-handleDebug(enableDebug, debugManager)
+handleDebug()
 
 // Set up App State globally
 const appState = new AppStateStore()

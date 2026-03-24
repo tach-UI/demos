@@ -1,6 +1,6 @@
 {
   "name": "@tachui/calculator-app",
-  "version": "0.1.0",
+  "version": "0.8.8-alpha",
   "description": "tachUI Calculator - Comprehensive demo showcasing precise interaction patterns and styling",
   "type": "module",
   "scripts": {
@@ -18,7 +18,11 @@
     "clean": "rm -rf dist node_modules/.vite*"
   },
   "dependencies": {
-    "@tachui/core": "^0.7.0-alpha1"
+    "@tachui/core": "link:../../packages/core",
+    "@tachui/data": "link:../../packages/data",
+    "@tachui/flow-control": "link:../../packages/flow-control",
+    "@tachui/modifiers": "link:../../packages/modifiers",
+    "@tachui/primitives": "link:../../packages/primitives"
   },
   "devDependencies": {
     "@types/node": "^20.19.10",
